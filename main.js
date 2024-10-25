@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const gradeManagement_1 = require("./gradeManagement");
+const gradeManagement = new gradeManagement_1.GradeManagement();
+const student1 = { id: 1, name: 'Alice' };
+const student2 = { id: 2, name: 'Bob' };
+const course1 = { id: 1, name: 'Math' };
+const course2 = { id: 2, name: 'Science' };
+gradeManagement.addGrade(student1, course1, 85);
+gradeManagement.addGrade(student2, course2, 90);
+console.log('All grades:', gradeManagement.listGrades());
+gradeManagement.updateGrade(1, 1, 95);
+console.log('After update:', gradeManagement.listGrades());
+gradeManagement.removeGrade(2, 2);
+console.log('After deletion:', gradeManagement.listGrades());
+gradeManagement.printGradesForStudent(1);
+gradeManagement.sendDataToServer();
